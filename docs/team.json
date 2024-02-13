@@ -1,26 +1,22 @@
 {
-    "teamName": "{naam van je team}",
+    "teamName": "Eendjes",
     "members": [
         {
-            "name" : "{teamlid 1}",
+            "name" : "Lars",
             "personalPage" : "https://pad/naar/de/app/van/teamlid-1"
         },
         {
-            "name" : "{teamlid 2}",
+            "name" : "Justin",
             "personalPage" : "https://pad/naar/de/app/van/teamlid-2"
         },
         {
-            "name" : "{teamlid 3}",
+            "name" : "Quinten",
             "personalPage" : "https://pad/naar/de/app/van/teamlid-3"
         },
         {
-            "name" : "{teamlid 4}",
-            "personalPage" : "https://pad/naar/de/app/van/teamlid-4"
-        },
-        {
-            "name" : "{teamlid 5}",
-            "personalPage" : "https://pad/naar/de/app/van/teamlid-5"
-        },
+            "name" : "Kevin",
+            "personalPage" : "https://kboere.github.io/web-app-from-scratch-2324/"
+        }
     ],
 
 
