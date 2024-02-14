@@ -10,7 +10,7 @@ function toggleDarkMode() {
 
 darkModeToggle.addEventListener('change', toggleDarkMode);
 
-
+const details = document.querySelectorAll("details");
 details.forEach((targetDetail) => {
   targetDetail.addEventListener("click", () => {
     // Close all the details that are not targetDetail.

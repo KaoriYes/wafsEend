@@ -229,7 +229,7 @@ details {
     pointer-events: none;
 }
 
-details.kevin summary {
+details.Kboere summary {
     position: absolute;
     bottom: -4vw;
     animation: floating 20s linear infinite;
@@ -242,10 +242,10 @@ details img {
     height: auto;
 }
 
-details.quinten summary {
+details.KaoriYes summary {
     position: absolute;
     bottom: -4vw;
-    animation: floatingQuinten 20s linear infinite;
+    animation: floatingQuinten 10s linear infinite;
     animation-delay: 1s;
     cursor: pointer;
     pointer-events: initial;
