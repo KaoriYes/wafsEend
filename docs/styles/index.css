@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+    }
 
 :root {
     /* Font Sizes */
@@ -14,23 +14,23 @@
     --h5-font-size: 1.2rem;
     --h6-font-size: 1rem;
     --p-font-size: 1rem;
-
-
+    
+    
     /* Background Colors-light */
-    --body-bg-color: #FFF9CC;
-    --bg-details-box: #E5DD97;
-
+    --body-bg-color: #fff9cc;
+    --bg-details-box: #e5dd97;
+    
     /* Text Colors-light */
-    --text-color-default: #000;
-    --text-color-accent: #E5DD97;
-
+    --text-color-default: #000000;
+    --text-color-accent: #e5dd97;
+    
     --logo-fill-color: #000000;
-}
+    }
 
 ::selection {
-    background-color: var(--text-color-accent);
     color: var(--text-color-default);
-}
+    background-color: var(--text-color-accent);
+    }
 
 
 /* Header styles */
@@ -45,158 +45,160 @@ p {
     font-weight: 400;
     line-height: 1.2;
     color: var(--text-color-default);
-}
+    }
 
 h1 {
     font-size: var(--h1-font-size);
-}
+    }
 
 h2 {
     font-size: var(--h2-font-size);
-}
+    }
 
 h3 {
     font-size: var(--h3-font-size);
-}
+    }
 
 h4 {
     font-size: var(--h4-font-size);
-}
+    }
 
 h5 {
     font-size: var(--h5-font-size);
-}
+    }
 
 h6 {
     font-size: var(--h6-font-size);
-}
+    }
 
 p {
     font-size: var(--p-font-size);
-}
+    }
 
 /* standard styling */
 
 body {
     position: relative;
-    background-color: var(--body-bg-color);
-    font-family: "Roboto", sans-serif;
     overflow: hidden;
-}
+    font-family: "Roboto", sans-serif;
+    background-color: var(--body-bg-color);
+    }
 
 body:has(input:checked) {
-    --body-bg-color: #222222;
-    --bg-details-box: #4B4B4B;
-
-    --text-color-default: #ffffff;
-    --text-color-accent: #4B4B4B;
-
-    --logo-fill-color: #ffffff;
     color: var(--text-color-default)
-}
+    --body-bg-color: #222222;
+    
+    --bg-details-box: #4b4b4b;
+    --text-color-default: #ffffff;
+    
+    --text-color-accent: #4b4b4b;
+    --logo-fill-color: #ffffff;
+    }
 
 header {
     position: relative;
     z-index: 99999;
-}
+    }
 
 header nav {
     position: relative;
     display: flex;
+    align-items: center;
     flex-wrap: nowrap;
     justify-content: space-between;
     padding: 1em;
-}
+    }
 
 nav svg {
     width: auto;
     height: 50px;
-
-}
+    
+    }
 
 nav svg #Team_Eend {
     fill: var(--logo-fill-color);
-}
+    }
 
 nav .hgroup {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
     align-items: center;
-    text-transform: uppercase;
+    flex-direction: column;
+    flex-wrap: wrap;
     font-weight: 100;
-}
+    text-transform: uppercase;
+    }
 
 nav .hgroup span {
     font-weight: 800;
-}
+    }
 
 /* darkmode switch */
 
 /* Hide the checkbox */
 .toggle-switch .toggle-checkbox {
     display: none;
-}
+    }
 
 .toggle-switch::before {
-    content: '🌞';
     position: relative;
     top: -0.25em;
     left: 61px;
+    z-index: 1;
+    content: "🌞";
+    transition: 0.3s ease;
     font-size: 1.5em;
     opacity: 1;
-    z-index: 1;
-    transition: 0.3s ease;
-}
+    }
 
 .toggle-switch::after {
-    content: '🌜';
     position: relative;
     top: -0.25em;
     left: -30px;
-    text-shadow: 0 0 2px #000000a2;
+    z-index: -1;
+    content: "🌜";
+    transition: 0.3s ease;
     font-size: 1.5em;
     opacity: 0;
-    z-index: -1;
-    transition: 0.3s ease;
-}
+    text-shadow: 0 0 2px #000000a2;
+    }
 
 
 body:has(input:checked) .toggle-switch::before {
-    content: "🌞";
-    font-size: 1.5em;
-    opacity: 0;
     left: 20px;
     z-index: -1;
+    content: "🌞";
     transition: 0.3s ease;
-}
+    font-size: 1.5em;
+    opacity: 0;
+    }
 
 body:has(input:checked) .toggle-switch::after {
-    content: '🌜';
-    font-size: 1.5em;
-    opacity: 1;
     left: -62px;
     z-index: 1;
+    content: "🌜";
     transition: 0.3s ease;
-}
+    font-size: 1.5em;
+    opacity: 1;
+    }
 
 /* Style the label to look like a toggle */
 .toggle-switch .toggle-label {
+    position: relative;
     display: inline-block;
     width: 60px;
     height: 30px;
-    background-color: #ccc;
-    border-radius: 15px;
-    position: relative;
     cursor: pointer;
+    background-color: #cccccc;
+    border-radius: 15px;
     outline: none;
     box-shadow: 0 0 3px #000000a2 inset;
     /* Remove default focus outline */
-}
+    }
 
 body:has(input:not(checked)) .toggle-switch .toggle-label {
     background: #56bfee;
     }
+
 body:has(input:checked) .toggle-switch .toggle-label {
     background: rgba(61, 47, 182, 0.97);
     }
@@ -204,628 +206,634 @@ body:has(input:checked) .toggle-switch .toggle-label {
 
 /* Style the inner circle of the toggle */
 .toggle-switch .toggle-label:after {
-    content: "";
     position: absolute;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background-color: white;
-    box-shadow: 2px 2px 4px #000000a2;
     top: 4px;
     left: 5px;
-    transition: transform 0.3s ease;
     z-index: 99;
-}
+    width: 22px;
+    height: 22px;
+    content: "";
+    transition: transform 0.3s ease;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px #000000a2;
+    }
 
 /* Move the inner circle to the right when the checkbox is checked */
-.toggle-switch .toggle-checkbox:checked+.toggle-label:after {
+.toggle-switch .toggle-checkbox:checked + .toggle-label:after {
     transform: translateX(29px);
-}
+    }
 
 /* Visually hidden class for screen reader text */
 .visually-hidden {
     position: absolute;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    height: 1px;
     width: 1px;
+    height: 1px;
     margin: -1px;
     padding: 0;
+    overflow: hidden;
     border: 0;
-}
-
-
+    clip: rect(0 0 0 0);
+    }
 
 
 /* ------------------------------------------------main---------------------------------------- */
 
 main {
-    height: 80vh;
     width: 100vw;
-}
+    height: 80vh;
+    }
 
 main section {
-    height: 100%;
     width: 100%;
-}
+    height: 100%;
+    }
 
 details summary::marker {
-    content: "";
     list-style-type: none;
-}
+    content: "";
+    }
 
 img.sea {
     position: fixed;
-    width: 100%;
     bottom: 0;
+    width: 100%;
     pointer-events: none;
-}
+    }
 
 img.sea:nth-child(1) {
-    z-index: -1;
     bottom: 2vw;
-}
+    z-index: -1;
+    }
 
 details .data-box {
     position: absolute;
-    width: 80%;
-    left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 80%;
     padding: 1em;
+    transform: translate(-50%, -50%);
     background-color: var(--bg-details-box);
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
+    }
 
 details {
     position: absolute;
+    bottom: 0;
     width: 100%;
     height: 100%;
-    bottom: 0;
     pointer-events: none;
-}
+    }
 
 details.Kboere summary {
     position: absolute;
     bottom: -4vw;
-    animation: floating 20s linear infinite;
     cursor: pointer;
     pointer-events: initial;
-}
-details summary span{
+    animation: floating 20s linear infinite;
+    }
+
+details summary span {
     display: none;
     }
 
 details img {
     width: 6vw;
     height: auto;
-}
+    }
 
-details div ul{
-    list-style: none;
+details div ul {
     display: flex;
     flex-direction: column;
+    padding: 0 1.25em;
+    list-style: none;
     gap: .25em;
-    padding:  0 1.25em;
     }
-details div ul li{
+
+details div ul li {
     display: flex;
     justify-content: right;
     font-weight: 500;
     }
-details div ul li span{
-    margin-left: auto;
+
+details div ul li span {
     width: 55%;
+    margin-left: auto;
     font-weight: 300;
     }
 
 details.KaoriYes summary {
     position: absolute;
     bottom: -4vw;
-    animation: floatingQuinten 10s linear infinite;
-    animation-delay: 1s;
     cursor: pointer;
     pointer-events: initial;
-}
+    animation: floatingQuinten 10s linear infinite;
+    animation-delay: 1s;
+    }
 
 /* Lars's duck */
 
 details.larsvv99 summary {
     position: absolute;
     bottom: -4vw;
-    animation: doubleJump 10s linear infinite;
     cursor: pointer;
     pointer-events: initial;
-}
+    animation: doubleJump 10s linear infinite;
+    }
 
 /* justin's duck */
 
 details.JustinPrins98 summary {
     position: absolute;
     bottom: -4vw;
-    animation: swimming 25s linear infinite;
     cursor: pointer;
     pointer-events: initial;
-}
+    animation: swimming 25s linear infinite;
+    }
 
 @keyframes swimming {
     0% {
         left: 0;
         transform: translateY(-2vw);
-    }
-
+        }
+    
     3% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     10% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     12% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     15% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     20% {
         transform: translateY(2vw);
-    }
-
-
+        }
+    
+    
     33% {
         transform: translateY(2vw);
-    }
-
+        }
+    
     36% {
         transform: translateY(0vw);
-    }
-
+        }
+    
     39% {
         transform: translateY(-7vw) rotate(0deg);
-    }
-
+        }
+    
     42% {
         transform: translateY(-20vw) rotate(3600deg);
-    }
-
+        }
+    
     46% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     49% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     50% {
         left: calc(100% - 6vw);
         transform: translateY(-2vw) rotateY(180deg);
-    }
-
+        }
+    
     51% {
         transform: translateY(-2vw) rotateY(180deg);
-    }
-
+        }
+    
     54% {
         transform: translateY(-2vw) rotateY(180deg);
-    }
-
+        }
+    
     57% {
-        transform: translateY(-20vw) rotateY(180deg)rotate(3600deg);
-    }
-
+        transform: translateY(-20vw) rotateY(180deg) rotate(3600deg);
+        }
+    
     64% {
         transform: translateY(5vw) rotateY(180deg);
-    }
-
+        }
+    
     67% {
         transform: translateY(5vw) rotateY(180deg);
-    }
-
+        }
+    
     80% {
         transform: translateY(5vw) rotateY(180deg);
-    }
-
+        }
+    
     85% {
         transform: translateY(-15vw) rotateY(180deg) rotate(3600deg);
-    }
-
+        }
+    
     88% {
         transform: translateY(-2vw) rotateY(180deg);
-    }
-
+        }
+    
     97% {
         transform: translateY(-7vw) rotateY(180deg);
-    }
-
+        }
+    
     100% {
         left: 0;
         transform: translateY(-2vw) rotateY(180deg);
+        }
     }
-}
 
 @keyframes doubleJump {
     0% {
         left: 0;
         transform: translateY(-2vw);
-    }
-
+        }
+    
     3% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     10% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     15% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     20% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     33% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     36% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     39% {
         transform: translateY(-9vw);
-    }
-
+        }
+    
     42% {
         transform: translateY(-19vw);
-    }
-
+        }
+    
     46% {
         transform: translateY(-23vw);
-    }
-
+        }
+    
     49% {
         transform: translateY(-19vw);
-    }
-
+        }
+    
     50% {
         left: calc(100% - 6vw);
         transform: translateY(-17vw);
-    }
-
+        }
+    
     51% {
         transform: translateY(-19vw);
-    }
-
+        }
+    
     54% {
         transform: translateY(-23vw) rotateX(180deg);
-    }
-
+        }
+    
     58% {
         transform: translateY(-19vw) rotateX(360deg) rotateY(180deg);
-    }
-
+        }
+    
     61% {
         transform: translateY(-7vw) rotateY(180deg);
-    }
-
+        }
+    
     64% {
         transform: translateY(-2vw) rotateY(180deg);
-    }
-
+        }
+    
     67% {
         transform: translateY(-7vw) rotateY(180deg);
-    }
-
+        }
+    
     73% {
         transform: translateY(-4vw) rotateY(180deg);
-    }
-
+        }
+    
     80% {
         transform: translateY(-1vw) rotateY(180deg);
-    }
-
+        }
+    
     85% {
         transform: translateY(16vw) rotateX(40deg) rotateY(180deg);
-    }
-
+        }
+    
     90% {
         transform: translateY(16vw) rotateY(180deg);
-    }
-
+        }
+    
     95% {
         transform: translateY(-7vw) rotateX(-40deg) rotateY(180deg);
-    }
-
+        }
+    
     100% {
         left: 0;
         transform: translateY(-2vw) rotateY(180deg);
+        }
     }
-}
 
 
 @keyframes floating {
     0% {
         left: 0;
         transform: translateY(-2vw);
-    }
-
+        }
+    
     3% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     10% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     15% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     20% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     33% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     36% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     39% {
         transform: translateY(-9vw);
-    }
-
+        }
+    
     42% {
         transform: translateY(-9vw);
-    }
-
+        }
+    
     46% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     49% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     50% {
         left: calc(100% - 6vw);
         transform: translateY(-2vw);
-    }
-
+        }
+    
     51% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     54% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     58% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     61% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     64% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     67% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     80% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     85% {
         transform: translateY(-6vw);
-    }
-
+        }
+    
     90% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     97% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     100% {
         left: 0;
         transform: translateY(-2vw);
+        }
     }
-}
 
 
 @keyframes floatingQuinten {
     0% {
         left: 0;
         transform: translateY(-2vw) rotateY(180deg);
-    }
-
+        }
+    
     2% {
         transform: translateY(-4vw) rotateY(180deg);
-    }
-
+        }
+    
     7% {
         transform: translateY(0) rotateY(180deg);
-    }
-
+        }
+    
     10% {
         transform: translateY(-7vw) rotateY(180deg);
-    }
-
+        }
+    
     14% {
         transform: translateY(-12vw) rotateY(180deg);
-    }
-
+        }
+    
     18% {
         transform: translateY(7vw) rotateY(180deg);
-    }
-
+        }
+    
     22% {
         transform: translateY(12vw) rotateY(180deg);
-    }
-
+        }
+    
     28% {
         transform: translateY(19vw) rotateY(180deg);
-    }
-
+        }
+    
     35% {
         transform: translateY(-2vw) rotateY(180deg);
-    }
-
+        }
+    
     40% {
         transform: translateY(-2vw) rotateY(180deg);
-    }
-
+        }
+    
     49% {
         transform: translateY(-2vw) rotateY(180deg);
-    }
-
+        }
+    
     50% {
         left: calc(100% - 6vw);
         transform: translateY(-2vw) rotateY(180deg);
-    }
-
+        }
+    
     51% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     54% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     58% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     61% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     64% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     67% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     80% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     85% {
         transform: translateY(-6vw);
-    }
-
+        }
+    
     90% {
         transform: translateY(-2vw);
-    }
-
+        }
+    
     97% {
         transform: translateY(-7vw);
-    }
-
+        }
+    
     100% {
         left: 0;
         transform: translateY(-2vw);
+        }
     }
-}
 
 
 @media (max-width: 800px) {
-
-    body{
+    
+    body {
         overflow: auto;
-    }
-    main{
+        }
+    
+    main {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         
         }
-
-    main section{
+    
+    main section {
         display: flex;
         align-content: flex-start;
         /* gap: 1em; */
         flex-direction: column;
-        height: 50vh;
         flex-wrap: wrap;
-    }
-
+        height: 50vh;
+        }
+    
     img.sea {
         display: none;
-    }
-
-    details{
-        position: unset;
-        height: 40%;
-        width: 50%;
-        padding: 4px 16px;
-    }
+        }
     
-    details summary span{
-        display: unset;
+    details {
+        position: unset;
+        width: 50%;
+        height: 40%;
+        padding: 4px 16px;
+        }
+    
+    details summary span {
         position: absolute;
         top: 2em;
+        display: unset;
         font-size: 1.5em;
         /* font-weight: bold; */
         }
+    
     details img {
         position: relative;
-        width: 25%;
-        /* left: 50%; */
         top: 50%;
+        /* left: 50%; */
+        width: 25%;
         transform: translate(-50%, -50%);
-    }
-
+        }
+    
     details.Kboere summary,
     details.KaoriYes summary,
     details.JustinPrins98 summary,
-    details.larsvv99 summary{
-        animation: none;
+    details.larsvv99 summary {
         position: relative;
         bottom: 0;
         height: 100%;
+        padding: 20px;
         background-color: var(--text-color-accent);
         border-radius: 10px;
-        padding: 20px;
-    }
-    details div.data-box{
+        animation: none;
+        }
+    
+    details div.data-box {
         z-index: 99;
         }
-
-}
+        
+    }
 
 @media (max-width: 480px) {
-
-    main section{
+    
+    main section {
         display: flex;
         flex-wrap: wrap;
         /* align-content: flex-start; */
-        gap: 1em;
         height: initial;
-        }
-    details{
-        width: 100%;
-        height: 15vh;
-    }
-    details summary span{
-        top:1em;
+        gap: 1em;
         }
     
-
-}
+    details {
+        width: 100%;
+        height: 15vh;
+        }
+    
+    details summary span {
+        top: 1em;
+        }
+        
+        
+    }
