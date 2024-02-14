@@ -1,0 +1,404 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Font Sizes */
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.4rem;
+    --h4-font-size: 1.2rem;
+    --h5-font-size: 1.2rem;
+    --h6-font-size: 1rem;
+    --p-font-size: 1rem;
+
+
+    /* Background Colors-light */
+    --body-bg-color: #FFF9CC;
+    --bg-details-box: #E5DD97;
+
+    /* Text Colors-light */
+    --text-color-default: #000;
+    --text-color-accent: #E5DD97;
+
+    --logo-fill-color: #000000;
+}
+
+::selection {
+    background-color: var(--text-color-accent);
+    color: var(--text-color-default);
+}
+
+
+/* Header styles */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text-color-default);
+}
+
+h1 {
+    font-size: var(--h1-font-size);
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+}
+
+h3 {
+    font-size: var(--h3-font-size);
+}
+
+h4 {
+    font-size: var(--h4-font-size);
+}
+
+h5 {
+    font-size: var(--h5-font-size);
+}
+
+h6 {
+    font-size: var(--h6-font-size);
+}
+
+p {
+    font-size: var(--p-font-size);
+}
+
+/* standard styling */
+
+body {
+    position: relative;
+    background-color: var(--body-bg-color);
+    font-family: "Roboto", sans-serif;
+}
+
+body.dark-mode{
+    --body-bg-color: #222222;
+    --bg-details-box: #4B4B4B;
+
+    --text-color-default: #ffffff;
+    --text-color-accent: #4B4B4B;
+
+    --logo-fill-color: #ffffff;
+}
+
+header{
+    position: relative;
+    z-index: 99999;
+}
+
+header nav{
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+nav svg{
+    width: auto;
+    height: 50px;
+
+}
+
+nav svg #Team_Eend{
+    fill: var(--logo-fill-color);
+}
+
+nav .hgroup {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+nav .hgroup span{
+    font-weight: 800;
+}
+
+/* darkmode switch */
+
+/* Hide the checkbox */
+.toggle-switch .toggle-checkbox {
+    display: none;
+  }
+  
+  /* Style the label to look like a toggle */
+  .toggle-switch .toggle-label {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    outline: none; /* Remove default focus outline */
+  }
+  
+  /* Style the inner circle of the toggle */
+  .toggle-switch .toggle-label:after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: white;
+    top: 4px;
+    left: 2px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Move the inner circle to the right when the checkbox is checked */
+  .toggle-switch .toggle-checkbox:checked + .toggle-label:after {
+    transform: translateX(30px);
+  }
+  
+  /* Visually hidden class for screen reader text */
+  .visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+  }
+
+
+
+
+  /* ------------------------------------------------main---------------------------------------- */
+
+  main{
+    height: 80vh;
+    width: 100vw;
+  }
+
+  main section{
+    height: 100%;
+    width: 100%;
+  }
+
+  details summary::marker {
+    content: "";
+    list-style-type: none;
+  }
+  
+  img.sea {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    pointer-events: none;
+}
+
+img.sea:nth-child(1) {
+    z-index: -1;
+    bottom: 2vw;
+}
+
+details .data-box {
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1em;
+    background-color: var(--bg-details-box);
+    border-radius: 10px;
+}
+
+details {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    pointer-events: none;
+}
+
+details.kevin summary {
+    position: absolute;
+    bottom: -4vw;
+    animation: floating 20s linear infinite;
+    cursor: pointer;
+    pointer-events: initial;
+}
+
+details img {
+    width: 6vw;
+    height: auto;
+}
+
+details.quinten summary {
+    position: absolute;
+    bottom: -4vw;
+    animation: floatingQuinten 20s linear infinite;
+    animation-delay: 1s;
+    cursor: pointer;
+    pointer-events: initial;
+    }
+    
+
+@keyframes floating {
+    0% {
+        left: 0;
+        transform: translateY(-2vw);
+    }
+    3% {
+        transform: translateY(-7vw);
+    }
+    10% {
+        transform: translateY(-2vw);
+    }
+    15% {
+        transform: translateY(-7vw);
+    }
+    20% {
+        transform: translateY(-2vw);
+    }
+    33% {
+        transform: translateY(-7vw);
+    }
+    36% {
+        transform: translateY(-2vw);
+    }
+    39% {
+        transform: translateY(-9vw);
+    }
+    42% {
+        transform: translateY(-9vw);
+    }
+    46% {
+        transform: translateY(-2vw);
+    }
+    49% {
+        transform: translateY(-2vw);
+    }
+    50% {
+        left: calc(100% - 6vw);
+        transform: translateY(-2vw);
+    }
+    51% {
+        transform: translateY(-2vw);
+    }
+    54% {
+        transform: translateY(-2vw);
+    }
+    58% {
+        transform: translateY(-7vw);
+    }
+    61% {
+        transform: translateY(-7vw);
+    }
+    64% {
+        transform: translateY(-2vw);
+    }
+    67% {
+        transform: translateY(-7vw);
+    }
+    80% {
+        transform: translateY(-2vw);
+    }
+    85% {
+        transform: translateY(-6vw);
+    }
+    90% {
+        transform: translateY(-2vw);
+    }
+    97% {
+        transform: translateY(-7vw);
+    }
+    100% {
+        left: 0;
+        transform: translateY(-2vw);
+    }
+  }
+
+
+@keyframes floatingQuinten {
+    0% {
+        left: 0;
+        transform: translateY(-2vw) rotateY(180deg);
+        }
+    2% {
+        transform: translateY(-4vw) rotateY(180deg);
+        }
+    7% {
+        transform: translateY(0) rotateY(180deg);
+        }
+    10% {
+        transform: translateY(-7vw) rotateY(180deg);
+        }
+    14% {
+        transform: translateY(-12vw) rotateY(180deg);
+        }
+    18% {
+        transform: translateY(7vw) rotateY(180deg);
+        }
+    22% {
+        transform: translateY(12vw) rotateY(180deg);
+        }
+    28% {
+        transform: translateY(19vw) rotateY(180deg);
+        }
+    35% {
+        transform: translateY(-2vw) rotateY(180deg);
+        }
+    40% {
+        transform: translateY(-2vw) rotateY(180deg);
+        }
+    49% {
+        transform: translateY(-2vw) rotateY(180deg);
+        }
+    50% {
+        left: calc(100% - 6vw);
+        transform: translateY(-2vw) rotateY(180deg);
+        }
+    51% {
+        transform: translateY(-2vw);
+        }
+    54% {
+        transform: translateY(-2vw);
+        }
+    58% {
+        transform: translateY(-7vw);
+        }
+    61% {
+        transform: translateY(-7vw);
+        }
+    64% {
+        transform: translateY(-2vw);
+        }
+    67% {
+        transform: translateY(-7vw);
+        }
+    80% {
+        transform: translateY(-2vw);
+        }
+    85% {
+        transform: translateY(-6vw);
+        }
+    90% {
+        transform: translateY(-2vw);
+        }
+    97% {
+        transform: translateY(-7vw);
+        }
+    100% {
+        left: 0;
+        transform: translateY(-2vw);
+        }
+    }
