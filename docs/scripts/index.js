@@ -16,7 +16,7 @@ async function fetchDataColabs() {
         const response = await fetch('https://api.github.com/repos/Kaoriyes/wafsEend/collaborators', {
             headers: {
                 'X-GitHub-Api-Version': '2022-11-28',
-                'Authorization': 'Bearer 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ds',
+                'Authorization': 'Bearer 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',
                 'Accept': 'application/vnd.github+json',
             }
         })
