@@ -135,6 +135,34 @@ nav .hgroup span{
 .toggle-switch .toggle-checkbox {
     display: none;
   }
+
+  .toggle-switch::before {
+    content: '🌞';
+    position: relative;
+    top: -0.2em;
+    font-size: 1.5em;
+    opacity: 1;
+}
+ 
+.toggle-switch::after {
+    content: '🌜';
+    position: relative;
+    top: -0.2em;
+    font-size: 1.5em;
+    opacity: 0.3;
+}
+ 
+body.dark-mode .toggle-switch::before {
+    content: '🌞';
+    font-size: 1.5em;
+    opacity: 0.3;
+}
+ 
+body.dark-mode .toggle-switch::after {
+    content: '🌜';
+    font-size: 1.5em;
+    opacity: 1;
+}
   
   /* Style the label to look like a toggle */
   .toggle-switch .toggle-label {
@@ -250,6 +278,225 @@ details.KaoriYes summary {
     cursor: pointer;
     pointer-events: initial;
     }
+
+/* Lars's duck */
+ 
+details.larsvv99 summary {
+    position: absolute;
+    bottom: -4vw;
+    animation: doubleJump 10s linear infinite;
+    cursor: pointer;
+    pointer-events: initial;
+}
+
+/* justin's duck */
+ 
+details.JustinPrins98 summary {
+    position: absolute;
+    bottom: -4vw;
+    animation: swimming 25s linear infinite;
+    cursor: pointer;
+    pointer-events: initial;
+}
+ 
+@keyframes swimming {
+    0% {
+        left: 0;
+        transform: translateY(-2vw);
+    }
+ 
+    3% {
+        transform: translateY(-7vw);
+    }
+ 
+    10% {
+        transform: translateY(-2vw);
+    }
+ 
+    12% {
+        transform: translateY(-2vw);
+    }
+ 
+    15% {
+        transform: translateY(-2vw);
+    }
+ 
+    20% {
+        transform: translateY(2vw);
+    }
+ 
+ 
+    33% {
+        transform: translateY(2vw);
+    }
+ 
+    36% {
+        transform: translateY(0vw);
+    }
+ 
+    39% {
+        transform: translateY(-7vw) rotate(0deg);
+    }
+ 
+    42% {
+        transform: translateY(-20vw) rotate(3600deg);
+    }
+ 
+    46% {
+        transform: translateY(-2vw);
+    }
+ 
+    49% {
+        transform: translateY(-2vw);
+    }
+ 
+    50% {
+        left: calc(100% - 6vw);
+        transform: translateY(-2vw) rotateY(180deg);
+    }
+ 
+    51% {
+        transform: translateY(-2vw) rotateY(180deg);
+    }
+ 
+    54% {
+        transform: translateY(-2vw) rotateY(180deg);
+    }
+ 
+    57% {
+        transform: translateY(-20vw) rotateY(180deg)rotate(3600deg);
+    }
+ 
+    64% {
+        transform: translateY(5vw) rotateY(180deg);
+    }
+ 
+    67% {
+        transform: translateY(5vw) rotateY(180deg);
+    }
+ 
+    80% {
+        transform: translateY(5vw) rotateY(180deg);
+    }
+ 
+    85% {
+        transform: translateY(-15vw) rotateY(180deg) rotate(3600deg);
+    }
+ 
+    88% {
+        transform: translateY(-2vw) rotateY(180deg);
+    }
+ 
+    97% {
+        transform: translateY(-7vw) rotateY(180deg);
+    }
+ 
+    100% {
+        left: 0;
+        transform: translateY(-2vw) rotateY(180deg);
+    }
+}
+ 
+@keyframes doubleJump {
+    0% {
+        left: 0;
+        transform: translateY(-2vw);
+    }
+ 
+    3% {
+        transform: translateY(-7vw);
+    }
+ 
+    10% {
+        transform: translateY(-2vw);
+    }
+ 
+    15% {
+        transform: translateY(-7vw);
+    }
+ 
+    20% {
+        transform: translateY(-2vw);
+    }
+ 
+    33% {
+        transform: translateY(-7vw);
+    }
+ 
+    36% {
+        transform: translateY(-2vw);
+    }
+ 
+    39% {
+        transform: translateY(-9vw);
+    }
+ 
+    42% {
+        transform: translateY(-19vw);
+    }
+ 
+    46% {
+        transform: translateY(-23vw);
+    }
+ 
+    49% {
+        transform: translateY(-19vw);
+    }
+ 
+    50% {
+        left: calc(100% - 6vw);
+        transform: translateY(-17vw);
+    }
+ 
+    51% {
+        transform: translateY(-19vw);
+    }
+ 
+    54% {
+        transform: translateY(-23vw) rotateX(180deg);
+    }
+ 
+    58% {
+        transform: translateY(-19vw) rotateX(360deg) rotateY(180deg);
+    }
+ 
+    61% {
+        transform: translateY(-7vw) rotateY(180deg);
+    }
+ 
+    64% {
+        transform: translateY(-2vw) rotateY(180deg);
+    }
+ 
+    67% {
+        transform: translateY(-7vw) rotateY(180deg);
+    }
+ 
+    73% {
+        transform: translateY(-4vw) rotateY(180deg);
+    }
+ 
+    80% {
+        transform: translateY(-1vw) rotateY(180deg);
+    }
+ 
+    85% {
+        transform: translateY(16vw) rotateX(40deg) rotateY(180deg);
+    }
+ 
+    90% {
+        transform: translateY(16vw) rotateY(180deg);
+    }
+ 
+    95% {
+        transform: translateY(-7vw) rotateX(-40deg) rotateY(180deg);
+    }
+ 
+    100% {
+        left: 0;
+        transform: translateY(-2vw) rotateY(180deg);
+    }
+}
     
 
 @keyframes floating {
