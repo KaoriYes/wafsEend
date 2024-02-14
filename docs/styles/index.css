@@ -84,7 +84,7 @@ body {
     overflow: hidden;
 }
 
-body.dark-mode {
+body:has(input:checked) {
     --body-bg-color: #222222;
     --bg-details-box: #4B4B4B;
 
@@ -92,6 +92,7 @@ body.dark-mode {
     --text-color-accent: #4B4B4B;
 
     --logo-fill-color: #ffffff;
+    color: var(--text-color-default)
 }
 
 header {
@@ -140,29 +141,43 @@ nav .hgroup span {
 .toggle-switch::before {
     content: '🌞';
     position: relative;
-    top: -0.2em;
+    top: -0.25em;
+    left: 61px;
     font-size: 1.5em;
     opacity: 1;
+    z-index: 1;
+    transition: 0.3s ease;
 }
 
 .toggle-switch::after {
     content: '🌜';
     position: relative;
-    top: -0.2em;
+    top: -0.25em;
+    left: -30px;
+    text-shadow: 0 0 2px #000000a2;
     font-size: 1.5em;
-    opacity: 0.3;
+    opacity: 0;
+    z-index: -1;
+    transition: 0.3s ease;
 }
 
-body.dark-mode .toggle-switch::before {
-    content: '🌞';
+
+body:has(input:checked) .toggle-switch::before {
+    content: "🌞";
     font-size: 1.5em;
-    opacity: 0.3;
+    opacity: 0;
+    left: 20px;
+    z-index: -1;
+    transition: 0.3s ease;
 }
 
-body.dark-mode .toggle-switch::after {
+body:has(input:checked) .toggle-switch::after {
     content: '🌜';
     font-size: 1.5em;
     opacity: 1;
+    left: -62px;
+    z-index: 1;
+    transition: 0.3s ease;
 }
 
 /* Style the label to look like a toggle */
@@ -175,8 +190,17 @@ body.dark-mode .toggle-switch::after {
     position: relative;
     cursor: pointer;
     outline: none;
+    box-shadow: 0 0 3px #000000a2 inset;
     /* Remove default focus outline */
 }
+
+body:has(input:not(checked)) .toggle-switch .toggle-label {
+    background: #56bfee;
+    }
+body:has(input:checked) .toggle-switch .toggle-label {
+    background: rgba(61, 47, 182, 0.97);
+    }
+
 
 /* Style the inner circle of the toggle */
 .toggle-switch .toggle-label:after {
@@ -186,14 +210,16 @@ body.dark-mode .toggle-switch::after {
     height: 22px;
     border-radius: 50%;
     background-color: white;
+    box-shadow: 2px 2px 4px #000000a2;
     top: 4px;
-    left: 2px;
+    left: 5px;
     transition: transform 0.3s ease;
+    z-index: 99;
 }
 
 /* Move the inner circle to the right when the checkbox is checked */
 .toggle-switch .toggle-checkbox:checked+.toggle-label:after {
-    transform: translateX(30px);
+    transform: translateX(29px);
 }
 
 /* Visually hidden class for screen reader text */
@@ -267,11 +293,32 @@ details.Kboere summary {
     cursor: pointer;
     pointer-events: initial;
 }
+details summary span{
+    display: none;
+    }
 
 details img {
     width: 6vw;
     height: auto;
 }
+
+details div ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .25em;
+    padding:  0 1.25em;
+    }
+details div ul li{
+    display: flex;
+    justify-content: right;
+    font-weight: 500;
+    }
+details div ul li span{
+    margin-left: auto;
+    width: 55%;
+    font-weight: 300;
+    }
 
 details.KaoriYes summary {
     position: absolute;
@@ -703,9 +750,19 @@ details.JustinPrins98 summary {
     body{
         overflow: auto;
     }
+    main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        }
 
     main section{
         display: flex;
+        align-content: flex-start;
+        /* gap: 1em; */
+        flex-direction: column;
+        height: 50vh;
         flex-wrap: wrap;
     }
 
@@ -714,16 +771,23 @@ details.JustinPrins98 summary {
     }
 
     details{
-        position: relative;
-        height: initial;
+        position: unset;
+        height: 40%;
         width: 50%;
-        padding: 20px;
+        padding: 4px 16px;
     }
-
+    
+    details summary span{
+        display: unset;
+        position: absolute;
+        top: 2em;
+        font-size: 1.5em;
+        /* font-weight: bold; */
+        }
     details img {
         position: relative;
-        width: 50%;
-        left: 50%;
+        width: 25%;
+        /* left: 50%; */
         top: 50%;
         transform: translate(-50%, -50%);
     }
@@ -740,13 +804,28 @@ details.JustinPrins98 summary {
         border-radius: 10px;
         padding: 20px;
     }
+    details div.data-box{
+        z-index: 99;
+        }
 
 }
 
 @media (max-width: 480px) {
 
+    main section{
+        display: flex;
+        flex-wrap: wrap;
+        /* align-content: flex-start; */
+        gap: 1em;
+        height: initial;
+        }
     details{
         width: 100%;
+        height: 15vh;
     }
+    details summary span{
+        top:1em;
+        }
+    
 
 }

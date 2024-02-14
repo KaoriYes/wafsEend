@@ -1,15 +1,3 @@
-const darkModeToggle = document.getElementById('darkModeToggle');
-
-function toggleDarkMode() {
-  if (darkModeToggle.checked) {
-    document.body.classList.add('dark-mode');
-  } else {
-    document.body.classList.remove('dark-mode');
-  }
-}
-
-darkModeToggle.addEventListener('change', toggleDarkMode);
-
 const details = document.querySelectorAll("details");
 details.forEach((targetDetail) => {
   targetDetail.addEventListener("click", () => {
@@ -35,7 +23,7 @@ async function fetchDataColabs(){
     const response = await fetch('https://api.github.com/repos/Kaoriyes/wafsEend/collaborators', {
       headers: {
         'X-GitHub-Api-Version': '2022-11-28',
-        'Authorization': 'Bearer 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',
+        'Authorization': 'Bearer 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',
         'Accept': 'application/vnd.github+json',
       }
     })
@@ -60,20 +48,26 @@ const collabId = async () => {
     const results = await Promise.all(promises);
     console.log(results)
     results.forEach(result => {
-      const dataList = document.querySelector(`.${result.login} div.data-box`);
+      const dataList = document.querySelector(`.${result.login} div.data-box ul`);
       Object.keys(result.data).forEach(key => {
         if (key === 'favorieteDoelwit'){
+          const listItemSpan = document.createElement('span')
           const listItem = document.createElement('li');
           // console.log(... result.data[key])
           let favTarget =  result.data[key];
-          listItem.textContent = `${key}: ${favTarget.doelwit1}, ${favTarget.doelwit2}, ${favTarget.doelwit3} `;
+          listItemSpan.textContent = ` ${favTarget.doelwit1}, ${favTarget.doelwit2}, ${favTarget.doelwit3}`
+          listItem.textContent = `${key}:`;
+          listItem.append(listItemSpan)
           dataList.append(listItem);
           console.log(favTarget)
         }
         else{
+          const listItemSpan = document.createElement('span')
           const listItem = document.createElement('li');
-        listItem.textContent = `${key}: ${result.data[key]}`;
-        dataList.append(listItem);
+          listItemSpan.textContent = ` ${result.data[key]}`
+          listItem.textContent = `${key}:`;
+          listItem.append(listItemSpan)
+          dataList.append(listItem);
       }});
     });
 
