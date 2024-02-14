@@ -85,7 +85,7 @@ body {
     }
 
 body:has(input:checked) {
-    color: var(--text-color-default)
+    color: var(--text-color-default);
     --body-bg-color: #222222;
     
     --bg-details-box: #4b4b4b;
